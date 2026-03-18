@@ -30,6 +30,7 @@ export default function Viewer() {
   }, [url, ext])
 
   const docxContainerRef = useRef(null)
+  const docxScaleTargetRef = useRef(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -53,6 +54,35 @@ export default function Viewer() {
             ignoreHeight: false,
             inWrapper: false,
           })
+
+          // Make docx preview responsive by scaling to container width.
+          const scaleToFit = () => {
+            const container = docxContainerRef.current
+            if (!container) return
+            const target =
+              container.querySelector('.docx-wrapper') ||
+              container.querySelector('.docx') ||
+              container.firstElementChild
+            if (!target) return
+            docxScaleTargetRef.current = target
+
+            const available = Math.max(1, container.clientWidth)
+            const natural = Math.max(1, target.scrollWidth)
+            const scale = Math.min(1, available / natural)
+
+            target.style.transformOrigin = 'top left'
+            target.style.transform = `scale(${scale})`
+            target.style.width = `${Math.round(natural)}px`
+            target.style.maxWidth = 'none'
+
+            container.style.setProperty('--docx-scale', String(scale))
+            // Keep container height consistent with scaled content.
+            container.style.height = `${Math.ceil(target.scrollHeight * scale)}px`
+          }
+
+          scaleToFit()
+          // Defer once more (fonts/images) for better first render on mobile.
+          requestAnimationFrame(scaleToFit)
         } catch (e) {
           if (!cancelled) setError(e?.message || 'Failed to render document')
         } finally {
@@ -64,6 +94,31 @@ export default function Viewer() {
       }
     }
   }, [url, ext])
+
+  useEffect(() => {
+    if (ext !== 'docx') return
+    const container = docxContainerRef.current
+    if (!container) return
+
+    const onResize = () => {
+      const target = docxScaleTargetRef.current
+      if (!target) return
+      const available = Math.max(1, container.clientWidth)
+      const natural = Math.max(1, target.scrollWidth)
+      const scale = Math.min(1, available / natural)
+      target.style.transform = `scale(${scale})`
+      container.style.setProperty('--docx-scale', String(scale))
+      container.style.height = `${Math.ceil(target.scrollHeight * scale)}px`
+    }
+
+    const ro = new ResizeObserver(onResize)
+    ro.observe(container)
+    window.addEventListener('orientationchange', onResize)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('orientationchange', onResize)
+    }
+  }, [ext])
 
   if (!url) {
     return (
