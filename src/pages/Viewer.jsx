@@ -59,25 +59,40 @@ export default function Viewer() {
           const scaleToFit = () => {
             const container = docxContainerRef.current
             if (!container) return
-            const target =
-              container.querySelector('.docx-wrapper') ||
-              container.querySelector('.docx') ||
-              container.firstElementChild
-            if (!target) return
-            docxScaleTargetRef.current = target
+
+            // Wrap the rendered content so we can scale + center it reliably.
+            let wrap = container.querySelector('[data-docx-scale-wrap="true"]')
+            if (!wrap) {
+              wrap = document.createElement('div')
+              wrap.setAttribute('data-docx-scale-wrap', 'true')
+              wrap.style.display = 'block'
+              wrap.style.marginLeft = 'auto'
+              wrap.style.marginRight = 'auto'
+              wrap.style.transformOrigin = 'top center'
+              wrap.style.maxWidth = 'none'
+
+              while (container.firstChild) wrap.appendChild(container.firstChild)
+              container.appendChild(wrap)
+            }
+
+            docxScaleTargetRef.current = wrap
+
+            // If docx-preview created an inner "page" element, use its width as the natural width.
+            const inner =
+              wrap.querySelector('.docx-wrapper') ||
+              wrap.querySelector('.docx') ||
+              wrap.firstElementChild
 
             const available = Math.max(1, container.clientWidth)
-            const natural = Math.max(1, target.scrollWidth)
+            const natural = Math.max(1, (inner?.scrollWidth || wrap.scrollWidth || available))
             const scale = Math.min(1, available / natural)
 
-            target.style.transformOrigin = 'top left'
-            target.style.transform = `scale(${scale})`
-            target.style.width = `${Math.round(natural)}px`
-            target.style.maxWidth = 'none'
+            wrap.style.width = `${Math.round(natural)}px`
+            wrap.style.transform = `scale(${scale})`
 
             container.style.setProperty('--docx-scale', String(scale))
-            // Keep container height consistent with scaled content.
-            container.style.height = `${Math.ceil(target.scrollHeight * scale)}px`
+            // Keep container height consistent with scaled content (so outer scroll works nicely).
+            container.style.height = `${Math.ceil(wrap.scrollHeight * scale)}px`
           }
 
           scaleToFit()
@@ -101,14 +116,20 @@ export default function Viewer() {
     if (!container) return
 
     const onResize = () => {
-      const target = docxScaleTargetRef.current
-      if (!target) return
+      const wrap = docxScaleTargetRef.current
+      if (!wrap) return
+      const inner =
+        wrap.querySelector('.docx-wrapper') ||
+        wrap.querySelector('.docx') ||
+        wrap.firstElementChild
       const available = Math.max(1, container.clientWidth)
-      const natural = Math.max(1, target.scrollWidth)
+      const natural = Math.max(1, (inner?.scrollWidth || wrap.scrollWidth || available))
       const scale = Math.min(1, available / natural)
-      target.style.transform = `scale(${scale})`
+      wrap.style.width = `${Math.round(natural)}px`
+      wrap.style.transformOrigin = 'top center'
+      wrap.style.transform = `scale(${scale})`
       container.style.setProperty('--docx-scale', String(scale))
-      container.style.height = `${Math.ceil(target.scrollHeight * scale)}px`
+      container.style.height = `${Math.ceil(wrap.scrollHeight * scale)}px`
     }
 
     const ro = new ResizeObserver(onResize)
