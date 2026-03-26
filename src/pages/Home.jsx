@@ -56,6 +56,11 @@ export default function Home() {
             )
           })}
         </div>
+
+        <div className="text-center mt-8 sm:mt-12 text-gray-700 dark:text-gray-300 text-lg sm:text-xl">
+          <p>For Demo Follow this Steps</p>
+          <p>Start Learning/Computer Engineering/Semester 6/Data Analytics/Theory Notes/Theory Notes - Unit 1.docx</p>
+        </div>
       </div>
     </div>
   )
