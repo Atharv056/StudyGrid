@@ -143,8 +143,6 @@ StudyGrid/
 
 ## 👤 Author
 **Atharv Pokale**
-- 🌍 Pune, India
-- 🐙 [GitHub](https://github.com/Atharv056)
 - 💼 [LinkedIn](https://www.linkedin.com/in/atharv-pokale-dev/)
 
 ---
