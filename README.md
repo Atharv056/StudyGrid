@@ -145,7 +145,7 @@ StudyGrid/
 **Atharv Pokale**
 - 🌍 Pune, India
 - 🐙 [GitHub](https://github.com/Atharv056)
-- 💼 [LinkedIn](https://linkedin.com/in/atharv-pokale-70a2562b7/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/atharv-pokale-dev/)
 
 ---
 ⭐️ If you found this project helpful, please give it a star!
