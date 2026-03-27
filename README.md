@@ -110,15 +110,18 @@ StudyGrid/
 ---
 
 ## 🖼️ Screenshots / Demo
-> **Note**: Replace these placeholders with actual screenshots of your application.
 
 | Home Page | Subject Dashboard |
 | :---: | :---: |
-| ![Home Page](https://via.placeholder.com/400x250?text=StudyGrid+Home) | ![Dashboard](https://via.placeholder.com/400x250?text=Subject+Dashboard) |
+| ![Home Page](./Homepage.png) | ![Subject Dashboard](./SubjectDashboard.png) |
 
 | Viewer Mode | Search Functionality |
 | :---: | :---: |
-| ![Viewer](https://via.placeholder.com/400x250?text=Document+Viewer) | ![Search](https://via.placeholder.com/400x250?text=Search+Modal) |
+| ![Viewer Mode](./ViewerMode.png) | ![Search Functionality](./SearchFunctionality.png) |
+
+| Dark Mode |
+| :---: |
+| ![Dark Mode](./DarkMode.png) |
 
 ---
 
@@ -141,8 +144,8 @@ StudyGrid/
 ## 👤 Author
 **Atharv Pokale**
 - 🌍 Pune, India
-- 🐙 [GitHub](https://github.com/atharv-pokale)
-- 💼 [LinkedIn](https://linkedin.com/in/atharvpokale)
+- 🐙 [GitHub](https://github.com/Atharv056)
+- 💼 [LinkedIn](https://linkedin.com/in/atharv-pokale-70a2562b7/)
 
 ---
 ⭐️ If you found this project helpful, please give it a star!
