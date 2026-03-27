@@ -58,8 +58,6 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-8 sm:mt-12 text-gray-700 dark:text-gray-300 text-lg sm:text-xl">
-          <p className="font-semibold">Atharv Pokale</p>
-          <p className="text-sm opacity-75 mb-4">Pune, India</p>
           <div className="text-sm bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-xl inline-block">
             <p className="font-bold text-indigo-600 dark:text-indigo-400">Demo Steps:</p>
             <p>Start Learning → Computer Engineering → Semester 6 → Data Analytics → Theory Notes → Unit 1</p>
