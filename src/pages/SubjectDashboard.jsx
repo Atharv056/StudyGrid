@@ -17,17 +17,17 @@ const LOCAL_FILES = {
     '4': {
       cloud: {
         practical_notes: [
-          { name: 'AAD Practical.pdf', url: 'AAD_Practical.pdf' },
+          { name: 'AAD Practical.pdf', url: '/AAD_Practical.pdf' },
         ],
       },
       iot_app: {
         practical_notes: [
-          { name: 'DCS & SP Practical.pdf', url: 'DCS&SP_Practical.pdf' },
+          { name: 'DCS & SP Practical.pdf', url: '/DCS_SP_Practical.pdf' },
         ],
       },
       dsa_prac: {
         practical_notes: [
-          { name: 'DSA Practical.pdf', url: 'DSA_Practical.pdf' },
+          { name: 'DSA Practical.pdf', url: '/DSA_Practical.pdf' },
         ],
       },
     },
