@@ -25,6 +25,11 @@ const LOCAL_FILES = {
           { name: 'DCS & SP Practical.pdf', url: 'DCS&SP_Practical.pdf' },
         ],
       },
+      dsa_prac: {
+        practical_notes: [
+          { name: 'DSA Practical.pdf', url: 'DSA_Practical.pdf' },
+        ],
+      },
     },
   },
 }
