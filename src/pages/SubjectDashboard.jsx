@@ -13,7 +13,22 @@ const LOCAL_FILES = {
       },
     },
   },
+  iot: {
+    '4': {
+      cloud: {
+        practical_notes: [
+          { name: 'AAD Practical.pdf', url: 'AAD_Practical.pdf' },
+        ],
+      },
+      iot_app: {
+        practical_notes: [
+          { name: 'DCS & SP Practical.pdf', url: 'DCS&SP_Practical.pdf' },
+        ],
+      },
+    },
+  },
 }
+
 
 function ResourceSection({ typeId, subjectId, branchId, semId }) {
   const type = RESOURCE_TYPES.find((t) => t.id === typeId)

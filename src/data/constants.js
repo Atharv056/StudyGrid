@@ -9,10 +9,14 @@ import {
   History,
   ClipboardList,
   Video,
+  Network,
+  Brain,
 } from 'lucide-react'
 
 export const BRANCHES = [
   { id: 'computer', name: 'Computer Engineering', icon: Cpu, color: 'from-blue-500 to-cyan-500' },
+  { id: 'iot', name: 'Computer Science (IoT)', icon: Network, color: 'from-indigo-500 to-blue-500' },
+  { id: 'aids', name: 'AI and Data Science (AIDS)', icon: Brain, color: 'from-purple-500 to-pink-500' },
   { id: 'mechanical', name: 'Mechanical Engineering', icon: Cog, color: 'from-amber-500 to-orange-500' },
   { id: 'civil', name: 'Civil Engineering', icon: HardHat, color: 'from-stone-500 to-amber-700' },
   { id: 'electrical', name: 'Electrical Engineering', icon: Zap, color: 'from-yellow-500 to-red-500' },
@@ -63,6 +67,64 @@ export const SAMPLE_SUBJECTS = {
     '6': [
       { id: 'da', name: 'Data Analytics', teacher: 'Prof. Deshmukh' },
       { id: 'project', name: 'Project', teacher: 'Prof. Patil' },
+    ],
+  },
+  iot: {
+    '1': [
+      { id: 'math1', name: 'Engineering Mathematics I', teacher: 'Prof. Patil' },
+      { id: 'iot_intro', name: 'Introduction to IoT', teacher: 'Prof. Kulkarni' },
+      { id: 'electronics', name: 'Basic Electronics', teacher: 'Prof. Deshmukh' },
+    ],
+    '2': [
+      { id: 'embedded', name: 'Embedded Systems', teacher: 'Prof. Patil' },
+      { id: 'sensors', name: 'Sensors & Actuators', teacher: 'Prof. Kulkarni' },
+    ],
+    '3': [
+      { id: 'micro', name: 'Microcontrollers', teacher: 'Prof. Kulkarni' },
+      { id: 'cn_iot', name: 'IoT Networking', teacher: 'Prof. Deshmukh' },
+    ],
+    '4': [
+      { id: 'iot_project', name: 'Microcontroller theory', teacher: 'Prof. Wakode Mam' },
+      { id: 'edge', name: 'Intro to IoT theory', teacher: 'Prof. Chaudhari Mam' },
+      { id: 'protocols', name: 'DCS & SP theory', teacher: 'Prof. Belsare Sir' },
+      { id: 'iot_project', name: 'Cyber Law theory', teacher: 'Prof. Priyanka Mam' },
+      { id: 'iot_project', name: 'Artificial Intelligence theory', teacher: 'Prof. Neha Mam' },
+      { id: 'cloud', name: 'AAD Practical', teacher: 'Prof. Roshni Mam' },
+      { id: 'iot_app', name: 'DCS & SP Practical', teacher: 'Prof. Sawarkar Mam' },
+      { id: 'iot_project', name: 'DSA Practical', teacher: 'Prof. Sarad Mam' },
+    ],
+    '5': [
+      { id: 'iot_sec', name: 'IoT Security', teacher: 'Prof. Patil' },
+      { id: 'smart_city', name: 'Smart City Solutions', teacher: 'Prof. Kulkarni' },
+    ],
+    '6': [
+      { id: 'iot_project', name: 'IoT Capstone Project', teacher: 'Prof. Deshmukh' },
+    ],
+  },
+  aids: {
+    '1': [
+      { id: 'math1', name: 'Engineering Mathematics I', teacher: 'Prof. Rao' },
+      { id: 'python', name: 'Python for Data Science', teacher: 'Prof. Iyer' },
+      { id: 'stats', name: 'Statistical Methods', teacher: 'Prof. Verma' },
+    ],
+    '2': [
+      { id: 'ds_aids', name: 'Data Structures & Algorithms', teacher: 'Prof. Rao' },
+      { id: 'prob', name: 'Probability & Random Processes', teacher: 'Prof. Iyer' },
+    ],
+    '3': [
+      { id: 'dbms_aids', name: 'Advanced DBMS', teacher: 'Prof. Rao' },
+      { id: 'linear_algebra', name: 'Linear Algebra', teacher: 'Prof. Iyer' },
+    ],
+    '4': [
+      { id: 'ml_intro', name: 'Foundations of ML', teacher: 'Prof. Rao' },
+      { id: 'data_mining', name: 'Data Mining', teacher: 'Prof. Iyer' },
+    ],
+    '5': [
+      { id: 'dl', name: 'Deep Learning', teacher: 'Prof. Rao' },
+      { id: 'big_data', name: 'Big Data Analytics', teacher: 'Prof. Iyer' },
+    ],
+    '6': [
+      { id: 'aids_project', name: 'AI/DS Capstone Project', teacher: 'Prof. Rao' },
     ],
   },
   mechanical: {
