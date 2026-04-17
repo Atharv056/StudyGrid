@@ -13,7 +13,7 @@
 - [✨ Features](#-features)
 - [🛠️ Technologies Used](#️-technologies-used)
 - [📂 Project Structure](#-project-structure)
-- [⚙️ Installation & Setup](#️-installation--setup)
+- [🚀 Quick Start](#-quick-start)
 - [🚀 Usage](#-usage)
 - [🖼️ Screenshots / Demo](#️-screenshots--demo)
 - [🔌 API Integration](#-api-integration)
@@ -64,13 +64,40 @@ StudyGrid/
 
 ---
 
-## ⚙️ Installation & Setup
+## 🚀 Quick Start
 
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
+### Option 1: Source Code Deployment (Recommended)
 
-### Steps
+#### Prerequisites
+
+| Tool | Version | Description | Check Installation |
+| :--- | :--- | :--- | :--- |
+| **Node.js** | 18+ | Frontend runtime, includes npm | `node -v` |
+| **Frontend** | React 19, Vite 8 | Modern UI framework and build tool | `npm list react vite` |
+| **Backend/DB** | Firebase 11 | Authentication and cloud database | `npm list firebase` |
+| **Languages** | JS, HTML5, CSS3 | Core development languages | - |
+
+### 1. Configure Environment Variables
+
+Create a `.env` file in the root directory:
+```bash
+cp .env.example .env
+```
+Edit the `.env` file and fill in your Firebase configuration keys.
+
+### 2. Required Environment Variables
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+### 3. Installation & Setup
+
 1. **Clone the repository**
    ```bash
    git clone https://github.com/atharv-pokale/StudyGrid.git
@@ -82,18 +109,7 @@ StudyGrid/
    npm install
    ```
 
-3. **Configure Firebase**
-   Create a `.env` file in the root directory and add your Firebase configuration:
-   ```env
-   VITE_FIREBASE_API_KEY=your_api_key
-   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-   VITE_FIREBASE_PROJECT_ID=your_project_id
-   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-   VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-   VITE_FIREBASE_APP_ID=your_app_id
-   ```
-
-4. **Start the development server**
+3. **Start the development server**
    ```bash
    npm run dev
    ```
